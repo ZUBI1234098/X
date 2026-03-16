@@ -1,15 +1,13 @@
 <template>
   <div data-app style="min-height: 100vh; display: flex;">
     <template v-if="showAppLayout">
-      <Seidbar 
-        :current-route="$route.path" 
-        style="width: 200px; height: 100vh;" 
+      <Seidbar
         @show-notification="handleNotification"
         @show-loading="handleLoading"
       />
-      <div style="flex: 1; display: flex; flex-direction: column;">
+      <div class="app-main nexcrm-app">
         <app-bar @language-changed="onLanguageChanged" />
-        <div style="flex: 1;">
+        <div class="app-content">
           <router-view />
         </div>
       </div>
@@ -72,7 +70,7 @@ export default {
   },
   computed: {
     showAppLayout() {
-      const guestPaths = ['/login', '/register', '/verify-email']
+      const guestPaths = ['/', '/landing', '/login', '/register', '/verify-email']
       return !guestPaths.includes(this.$route.path)
     }
   },

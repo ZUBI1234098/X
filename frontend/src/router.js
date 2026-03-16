@@ -2,10 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Customer from './views/Customer.vue'
+import CustomersNex from './views/CustomersNex.vue'
 import Product from './views/Product.vue'
+import ProductsNex from './views/ProductsNex.vue'
 import Settings from './views/Settings.vue'
+import SettingsNex from './views/SettingsNex.vue'
 import Tasks from './views/Tasks.vue'
 import Analytics from './analytics/Analytics.vue'
+import AnalyticsNex from './views/AnalyticsNex.vue'
 import RevenueAnalytics from './analytics/RevenueAnalytics.vue'
 import OrdersAnalytics from './analytics/OrdersAnalytics.vue'
 import ProductsAnalytics from './analytics/ProductsAnalytics.vue'
@@ -18,10 +22,13 @@ import UsersChart from './components/UsersChart.vue'
 import BuyPage from './views/BuyPage.vue'
 import ReturnPage from './views/ReturnPage.vue'
 import Team from './views/Team.vue'
+import EmployeesNex from './views/EmployeesNex.vue'
+import Orders from './views/Orders.vue'
 import ReturnsAnalytics from './analytics/ReturnsAnalytics.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import VerifyEmail from './views/VerifyEmail.vue'
+import Landing from './views/Landing.vue'
 import { getAuthToken } from './services/api'
 
 Vue.use(Router)
@@ -32,15 +39,17 @@ const router = new Router({
         { path: '/login', component: Login, meta: { guest: true } },
         { path: '/register', component: Register, meta: { guest: true } },
         { path: '/verify-email', component: VerifyEmail, meta: { guest: true } },
-        { path: '/', redirect: '/home' },
+        { path: '/landing', component: Landing, meta: { guest: true } },
+        { path: '/', component: Landing, meta: { guest: true } },
         { path: '/home', component: Home, meta: { requiresAuth: true } },
-        { path: '/customer', component: Customer, meta: { requiresAuth: true } },
-        { path: '/customers', component: Customer, meta: { requiresAuth: true } },
-        { path: '/product', component: Product, meta: { requiresAuth: true } },
-        { path: '/products', component: Product, meta: { requiresAuth: true } },
-        { path: '/settings', component: Settings, meta: { requiresAuth: true } },
+        { path: '/customer', component: CustomersNex, meta: { requiresAuth: true } },
+        { path: '/customers', component: CustomersNex, meta: { requiresAuth: true } },
+        { path: '/product', component: ProductsNex, meta: { requiresAuth: true } },
+        { path: '/products', component: ProductsNex, meta: { requiresAuth: true } },
+        { path: '/orders', component: Orders, meta: { requiresAuth: true } },
+        { path: '/settings', component: SettingsNex, meta: { requiresAuth: true } },
         { path: '/tasks', component: Tasks, meta: { requiresAuth: true } },
-        { path: '/analytics', component: Analytics, meta: { requiresAuth: true } },
+        { path: '/analytics', component: AnalyticsNex, meta: { requiresAuth: true } },
         { path: '/analytics/revenue', component: RevenueAnalytics, meta: { requiresAuth: true } },
         { path: '/analytics/orders', component: OrdersAnalytics, meta: { requiresAuth: true } },
         { path: '/analytics/users', component: UsersAnalytics, meta: { requiresAuth: true } },
@@ -55,7 +64,7 @@ const router = new Router({
         { path: '/analytics/expenses', component: ExpensesAnalytics, meta: { requiresAuth: true } },
         { path: '/buy', component: BuyPage, meta: { requiresAuth: true } },
         { path: '/return', component: ReturnPage, meta: { requiresAuth: true } },
-        { path: '/team', component: Team, meta: { requiresAuth: true } }
+        { path: '/team', component: EmployeesNex, meta: { requiresAuth: true } }
     ]
 })
 

@@ -1,0 +1,195 @@
+/* NexCRM — глобальные переменные и утилиты */
+.nexcrm-root,
+.nexcrm-root * {
+  box-sizing: border-box;
+}
+
+.nexcrm-root {
+  --nc-p: #8739f9;
+  --nc-pd: rgba(135, 57, 249, 0.15);
+  --nc-pg: rgba(135, 57, 249, 0.4);
+  --nc-bg: #0b0b0f;
+  --nc-bg2: #12121a;
+  --nc-bg3: #1a1a26;
+  --nc-tx: #fff;
+  --nc-tx2: #9ca3af;
+  --nc-br: rgba(135, 57, 249, 0.2);
+  --nc-gl: rgba(255, 255, 255, 0.03);
+  --nc-r: 16px;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--nc-bg);
+  color: var(--nc-tx);
+  -webkit-font-smoothing: antialiased;
+}
+
+.nexcrm-root h1, .nexcrm-root h2, .nexcrm-root h3, .nexcrm-root h4, .nexcrm-root h5, .nexcrm-root h6 {
+  font-family: 'Syne', sans-serif;
+}
+
+.nexcrm-root .nc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  letter-spacing: 0.01em;
+}
+
+.nexcrm-root .nc-btn-p {
+  background: linear-gradient(135deg, #8739f9, #6020d0);
+  color: #fff;
+}
+
+.nexcrm-root .nc-btn-p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--nc-pg);
+}
+
+.nexcrm-root .nc-btn-g {
+  background: transparent;
+  color: var(--nc-tx2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nexcrm-root .nc-btn-g:hover {
+  border-color: var(--nc-p);
+  color: var(--nc-tx);
+  background: var(--nc-pd);
+}
+
+.nexcrm-root .nc-card {
+  background: var(--nc-gl);
+  border: 1px solid var(--nc-br);
+  border-radius: var(--nc-r);
+  backdrop-filter: blur(20px);
+}
+
+.nexcrm-root .nc-gcard {
+  position: relative;
+}
+
+.nexcrm-root .nc-gcard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(135, 57, 249, 0.6), rgba(135, 57, 249, 0.1), rgba(135, 57, 249, 0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.nexcrm-root .nc-gtx {
+  background: linear-gradient(135deg, #fff 0%, #c084fc 50%, #8739f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nexcrm-root .nc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.nexcrm-root .nc-badge-g { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.2); }
+.nexcrm-root .nc-badge-y { background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.2); }
+.nexcrm-root .nc-badge-r { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.2); }
+.nexcrm-root .nc-badge-b { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+.nexcrm-root .nc-badge-p { background: rgba(135, 57, 249, 0.15); color: #c084fc; border: 1px solid rgba(135, 57, 249, 0.2); }
+
+.nexcrm-root input.nc-input,
+.nexcrm-root select.nc-input {
+  width: 100%;
+  background: var(--nc-bg2);
+  border: 1px solid var(--nc-br);
+  border-radius: 10px;
+  padding: 13px 16px;
+  color: var(--nc-tx);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  appearance: none;
+}
+
+.nexcrm-root input.nc-input:focus,
+.nexcrm-root select.nc-input:focus {
+  border-color: var(--nc-p);
+  box-shadow: 0 0 0 3px var(--nc-pd);
+}
+
+.nexcrm-root .nc-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--nc-tx2);
+}
+
+.nexcrm-root .nc-err {
+  color: #f87171;
+  font-size: 14px;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  margin-bottom: 16px;
+}
+
+.nexcrm-root .nc-spin {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  animation: nc-spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes nc-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes nc-fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nc-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.nexcrm-root .nc-fu { animation: nc-fadeUp 0.7s ease both; }
+.nexcrm-root .nc-fl { animation: nc-float 5s ease-in-out infinite; }
+
+/* Layout when sidebar is shown */
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 220px;
+  min-height: 100vh;
+}
+
+.nexcrm-app {
+  background: var(--nc-bg, #0b0b0f);
+}
+
+.app-content {
+  flex: 1;
+  overflow: auto;
+}
